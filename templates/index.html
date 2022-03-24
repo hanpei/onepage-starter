@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+<header class="container">
+  <h1>{{title}}</h1>
+</header>
+<main class="container">
+  <section>{{content}}</section>
+  {% if post_index %}
+  <h3>Blog</h3>
+  <ul>
+    {% for post in post_index %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</main>
+{% endblock content %}
